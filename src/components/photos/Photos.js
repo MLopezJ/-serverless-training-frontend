@@ -88,13 +88,9 @@ export default class Photos extends Component {
             .then (result => {  
 
               let allLabels = result[0].data;
-              // console.log(allLabels)
               if (allLabels) {
                 let labelsDetected = Object.values(allLabels);
-
-                const filterLabels = (cut, list) =>
-                  list.filter(label => !label.includes(cut));
-
+                const filterLabels = (cut, list) => list.filter(label => !label.S.includes(cut)).map(element => element.S);
                 let filtered = filterLabels('private', labelsDetected).join(' * ');
                 for (let i in images) {
                   if (images[i].original.includes(filename)) {
