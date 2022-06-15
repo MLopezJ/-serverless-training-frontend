@@ -132,6 +132,7 @@ class App extends Component {
               <Route exact path="/" render={(props) => <Home {...props} auth={authProps} />} />
               {/* <Route exact path="/products" render={(props) => <Products {...props} auth={authProps} />} /> */}
               <ProtectedRoute path="/photos" loggedIn={this.state.isAuthenticated} verified={this.state.isVerified} component={Photos} />
+              <ProtectedRoute path="/test" loggedIn={this.state.isAuthenticated} verified={this.state.isVerified} component={Photos} />
               <ProtectedRoute path="/admin" loggedIn={this.state.isAuthenticated} verified={this.state.isVerified} component={PhotosAdmin} />
               <ProtectedRoute path="/profile" loggedIn={this.state.isAuthenticated} verified={this.state.isVerified} component={ProfileAdmin} />
               <Route exact path="/admin" render={(props) => <PhotosAdmin {...props} auth={authProps} />} />
